@@ -1,0 +1,27 @@
+{/* This snippet is automatically generated using scripts/docs_render_provider_snippets.py 
+Do not edit it manually, as it will be overwritten */}
+
+## Authentication
+This provider requires authentication.
+- **domain**: Freshservice domain (e.g. yourcompany.freshservice.com) (required: True, sensitive: False)
+- **api_key**: Freshservice API key (required: True, sensitive: True)
+- **requester_email**: Email of the incident requester (required: True, sensitive: False)
+
+
+
+## In workflows
+
+This provider can be used in workflows.
+
+
+As "action" to make changes or update data, example:
+```yaml
+actions:
+    - name: Create Freshservice ticket
+      provider: freshservice
+      config: "{{ provider.my_provider_name }}"
+      with:
+        message: {value}  # Ticket description / body (required)
+        title: {value}    # Ticket subject (default: "Keep Alert")
+        priority: {value} # Priority: 1=Low, 2=Medium, 3=High, 4=Urgent (default: 2)
+```
